@@ -27,7 +27,7 @@ app.use('/user/notes',route2)
 
 app.use(express.static(path.join(__dirname, './client/build')))
 
-app.use('*', (req,res)=>{
+app.use('*', function(req,res){
           res.sendFile(path.join(__dirname, './client/build/index.html'))
 })
 
