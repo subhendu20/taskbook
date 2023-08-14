@@ -107,20 +107,16 @@ router.post('/login', async (req, res) => {
           const passwordcheck = await auth.compare(password, a.password)
 
           if (!passwordcheck) {
-                    res.status(400).send("invalid pasword")
+                    return res.status(400).send("invalid pasword")
           }
 
           const cookie = await JWT.sign(a.id, jwttk)
 
 
-          const cok = await res.cookie("signintoken", cookie, {
-                    httpOnly: true
+          const cok = await res.cookie("signintoken", cookie).send("done")
 
 
-          })
-
-
-          res.send("done")
+          
 
 
 
