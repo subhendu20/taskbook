@@ -12,12 +12,19 @@
   
 }
 
+header{
+  width: 100%;
+  height: auto;
+  position: fixed;
+  z-index: 2;
+}
+
 .App nav{
   width:100%;
 
   background-color:none;
-  position: fixed;
-  z-index: 2;
+  
+  
   height: auto;
   
 
