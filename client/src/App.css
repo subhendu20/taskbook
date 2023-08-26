@@ -1,0 +1,192 @@
+.App {
+  
+  background-image: url('./mountain-7690893_1920.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  display:flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: calc(var(--vh, 1vh) * 100);
+  
+  
+}
+
+.App nav{
+  width:100%;
+  min-height: 50px;
+  background-color:none;
+  position: fixed;
+  z-index: 2;
+  height: 5%;
+  
+
+  display: flex;
+  justify-content: space-between;
+  padding:10px;
+  align-items: center;
+
+}
+.black{
+  background-color: black;
+  color:white;
+  transition: 0.5s;
+  box-shadow: 0px 0.5px 8px 0px grey;
+}
+.App .route{
+  width:100%;
+  height: 95%;
+  position: relative;
+  z-index: 1;
+}
+.App nav .logo{
+  
+  
+  margin: 5px 0px;
+  
+  
+
+}
+.App nav .logo img{
+ width: 60px;
+ height: 60px;
+
+}
+.App nav .logo b:hover{
+  background-color: rgb(29, 28, 28);
+  color:green
+}
+.App nav .menu{
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  font-size: 20px;
+  
+}
+.App nav .menu span{
+
+  
+  margin:0px 2rem;
+  
+
+  
+
+
+}
+.App nav .menu span p{
+  color:white;
+  display:inline;
+  cursor: pointer;
+}
+.App nav .menu span p:hover{
+  color:green;
+  transform: scale(1.1);
+}
+
+.App nav .menu span a{
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  display: inline;
+  cursor: pointer;
+}
+.App nav .menu span a:hover{
+  color:green;
+  transform: scale(1.1);
+}
+.App nav .menu span a:active{
+  color:green;
+  
+}
+.none{
+  display: none;
+}
+.block{
+  display: inline;
+}
+
+#warning-logout{
+ 
+  position: absolute;
+  width: 20%;
+  left: 40%;
+  top:40%;
+  padding: 10px;
+  background-color: rgb(180, 178, 178);
+  z-index:15;
+  border-radius: 10px;
+  
+
+}
+#warning-logout.none{
+  display:none;
+}
+#warning-logout p{
+  width: 100%;
+  text-align: center;
+  font-size: 15px;
+  padding: 10px;
+}
+#warning-logout .buttons{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#warning-logout .buttons button{
+  padding:10px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(49, 47, 47);
+  color:gray;
+  font-size: 15px;
+  margin: 0px 10px;
+  transition: 0.2s;
+
+}
+#warning-logout .buttons button:hover{
+  background-color: rgb(8, 8, 8);
+  color:white;
+}
+
+
+
+
+@media (max-width:600px) {
+  .App nav{
+    min-height:auto;
+    height: auto;
+    padding: 5px!important;
+  }
+  .App .route{
+    height: 90%;
+  }
+  .App nav .logo img{
+    width: 40px;
+    height:40px;
+  }
+  
+  .App nav .menu span a{
+    font-size: 15px;
+    word-wrap: normal;
+    width: auto;
+  }
+  .App nav .menu span p{
+    font-size: 15px;
+    word-wrap: normal;
+    width: auto;
+  }
+  #warning-logout p{
+    font-size: 10px;
+  }
+  #warning-logout .buttons button{
+    font-size: 10px;
+  }
+  #warning-logout{
+    width: 60%;
+    left:20%;
+  }
+ 
+
+  
+}
