@@ -120,6 +120,7 @@ function App() {
           <button onClick={hide_signout_popup}>Cancel</button></span>
 
         </span>
+        <header>
         <nav className="nav">
           <div className="logo">
             <img src={logo} alt="logo" />
@@ -132,7 +133,8 @@ function App() {
             <span><a href="/" className='menu-lite'><i class='bx bx-home'></i></a></span>
           </div>
 
-        </nav>s
+        </nav>
+        </header>
         <Routes className="route">
           <Route path='/' element={<Home />} />
           <Route path='/dashboard' element={<Dashboard />} />

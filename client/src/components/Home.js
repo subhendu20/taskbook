@@ -137,7 +137,7 @@ function Home() {
     }
 
     return (
-        <section className='App-home'>
+        <main className='App-home'>
             <div className="content">
                 <div className="content-desc">
                     <p>Where great people maintain Harder tasks</p>
@@ -206,7 +206,7 @@ function Home() {
             </div>
             }
 
-        </section>
+        </main>
     )
 }
 

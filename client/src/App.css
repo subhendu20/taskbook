@@ -18,7 +18,7 @@
   background-color:none;
   position: fixed;
   z-index: 2;
-  height: 5%;
+  height: auto;
   
 
   display: flex;
@@ -35,7 +35,7 @@
 }
 .App .route{
   width:100%;
-  height: 95%;
+  height: 100%;
   position: relative;
   z-index: 1;
 }
@@ -159,7 +159,7 @@
     padding: 5px!important;
   }
   .App .route{
-    height: 90%;
+    height: 100%;
   }
   .App nav .logo img{
     width: 40px;
