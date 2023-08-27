@@ -26,7 +26,7 @@ function Home() {
     const navigate = useNavigate()
     const [api, setapi] = useState({ article: [], loading: true })
     const [names, setnames] = useState({ names: [] })
-    const[error,seterror]=useState('Please fill all the details about your task')
+    const [error, seterror] = useState('Please fill all the details about your task')
     const [addNote, setaddNote] = useState(false)
     //--------------------------------------fetch name list----------------------------//
     const getnamelist = () => {
@@ -52,11 +52,9 @@ function Home() {
         }).then(async (res) => {
             if (res.status === 200) {
                 setapi({ article: res.data, loading: false })
-
             }
             if (res.status === 400) {
                 setapi({ article: [], loading: true })
-
             }
         }).catch((e) => {
         })
@@ -65,7 +63,7 @@ function Home() {
 
     useEffect(() => {
         getapi()
-    }, [addNote, countstate,logstate])
+    }, [addNote, countstate, logstate])
 
 
     useEffect(() => {
@@ -97,27 +95,28 @@ function Home() {
 
             axios.post('/user/notes/postnote', dataapi, {
                 withCredentials: true
-            }).then((res) => {
-                setdata({ userid: "", title: "", date: "", description: "", member: [] })
-                setaddNote(false)
-                $('.form-input').val('')
+            }).then(async (res) => {
+                if (res.data === 'you have too logged in first') {
+                    await seterror('You have to login to add your task!')
+                    $('#error-addnote').toggleClass('none')
+
+                }
+                else {
+                    setdata({ userid: "", title: "", date: "", description: "", member: [] })
+                    setaddNote(false)
+                    $('.form-input').val('')
+
+                }
 
 
-                
+
+
 
 
             }
 
             ).catch(async (e) => {
-                if (e.response.status === 400) {
-                    await seterror('You have to login to add your task!')
-                    $('#error-addnote').toggleClass('none')
-                   
 
-                
-
-
-                }
             })
 
         }
@@ -184,7 +183,7 @@ function Home() {
 
 
             </div>
-            {(!api.loading && logstate) &&  <div className="notes">
+            {(!api.loading && logstate) && <div className="notes">
                 <div className="title"><b>Your tasks</b> </div>
 
                 {
