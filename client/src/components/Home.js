@@ -70,7 +70,7 @@ function Home() {
 
     useEffect(() => {
         getnamelist()
-    }, [])
+    }, [logstate])
 
 
     const [data, setdata] = useState({ userid: "", title: "", date: "", description: "", member: [] })
@@ -111,8 +111,8 @@ function Home() {
             ).catch(async (e) => {
                 if (e.response.status === 400) {
                     await seterror('You have to login to add your task!')
-                    await $('#error-addnote').toggleClass('none')
-                    seterror('Please fill all the details about your note')
+                    $('#error-addnote').toggleClass('none')
+                   
 
                 
 
@@ -122,6 +122,7 @@ function Home() {
 
         }
         else {
+            await seterror('Please fill all the details about your task')
             $('#error-addnote').toggleClass('none')
 
 
