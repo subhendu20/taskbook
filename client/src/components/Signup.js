@@ -3,7 +3,7 @@ import './css/Signup.css'
 import './css/Signup2.css'
 import { useState } from 'react'
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import $ from 'jquery'
 import "jquery-ui-dist/jquery-ui";
 
@@ -77,7 +77,7 @@ function Signup() {
                                         <span><label htmlFor="password">Password</label><input type="password" name="password" onChange={change} required minLength={5} maxLength={15} /> </span>
                                         <span><label htmlFor="confirmpassword">Confirm password</label><input type="password" name="confirmpassword" onChange={change} required/> </span>
                                         <span className='button'><button onClick={handlesubmit}>Sign Up</button></span>
-                                        <span className='message'>Have an Account <a href="/login">Log In</a></span>
+                                        <span className='message'>Have an Account <Link to="/login">Log In</Link></span>
 
 
                               </form>

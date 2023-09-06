@@ -6,7 +6,7 @@ import { useEffect } from 'react'
 import $ from 'jquery'
 import "jquery-ui-dist/jquery-ui";
 import './css/Home.css'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { members } from '../Lib/Memberlist '
 import { default as ReactSelect } from "react-select";
 // import { useCallback } from 'react'
@@ -138,7 +138,7 @@ function Home() {
             <div className="content">
                 <div className="content-desc">
                     <p>Where great people maintain Harder tasks</p>
-                    <a href='/dashboard'>Go to dashboard</a>
+                    <Link to='/dashboard'>Go to dashboard</Link>
 
 
 

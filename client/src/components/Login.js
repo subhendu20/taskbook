@@ -2,7 +2,7 @@ import React from 'react'
 import './css/Login.css'
 import { useState } from 'react'
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Cookies from 'universal-cookie'
 import { useSelector} from 'react-redux/es/hooks/useSelector';
 import { useDispatch } from 'react-redux';
@@ -68,7 +68,7 @@ function Login() {
                                         <span><label htmlFor="mobile">Mobile</label><input type="Number" placeholder="Enter Mobile Number" name="mobile" onChange={change} /></span>
                                         <span><label htmlFor="password">Password</label><input type="password" placeholder="Enter password" name="password" onChange={change} /></span>
                                         <span className='button'><button onClick={submit}>Log in</button></span>
-                                        <span className='signuplink'><p>Don't have an Account?</p><a href="/signup">Sign up</a></span>
+                                        <span className='signuplink'><p>Don't have an Account?</p><Link to="/signup">Sign up</Link></span>
 
                               </form>
 

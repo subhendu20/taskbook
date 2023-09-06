@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import Home from './components/Home';
 import $ from 'jquery'
 import "jquery-ui-dist/jquery-ui";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom"
 import Signup from './components/Signup';
 import Login from './components/Login';
 import axios from 'axios'
@@ -122,10 +122,10 @@ function App() {
 
           </div>
           <div className="menu">
-            {(logstate === false) ? <span ><a href="/signup" className='block'>Sign up</a></span> : <span onClick={view_signup}><p>Sign out</p></span>}
+            {(logstate === false) ? <span ><Link to="/signup" className='block'>Sign up</Link></span> : <span onClick={view_signup}><p>Sign out</p></span>}
 
 
-            <span><a href="/" className='menu-lite'><i class='bx bx-home'></i></a></span>
+            <span><Link to="/" className='menu-lite'><i class='bx bx-home'></i></Link></span>
           </div>
 
         </nav>
