@@ -46,10 +46,12 @@ function App() {
       })
 
   }, [])
+
+
   useEffect(() => {
     $(window).scroll(function () {
       var scroll = $(window).scrollTop()
-      if (scroll >= 200) {
+      if (scroll >= 100) {
         $('nav').addClass('black')
       }
       else {
@@ -58,6 +60,8 @@ function App() {
     })
   })
 
+  
+  
   useEffect(() => {
 
 
@@ -124,10 +128,10 @@ function App() {
           <span className="menu">
             {(!logstate) ? <span ><Link to="/">Home</Link> <Link to='./login'>Sign in</Link>   <Link id='add-task' to="/signup">Add Your First task</Link></span>
              :
-              <span onClick={view_signup}> 
+              <span > 
               <Link to="/">Home</Link>
                
-                <button>Sign out</button></span>}
+                <button onClick={view_signup}>Sign out</button></span>}
 
 
             

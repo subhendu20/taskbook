@@ -87,6 +87,8 @@ function Home() {
 
                 }
                 else{
+                    dispatch(countIncrease())
+                    $('.form-input').val('')
 
                 }
                 
