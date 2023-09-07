@@ -6,7 +6,6 @@ Features:
 User authentication and authorization using JWT (JSON Web Tokens).
 CRUD functionality for posts, comments, and user profiles.
 Real-time updates using WebSockets for instant post notifications.
-Responsive and mobile-friendly user interface.
 MongoDB database for data storage and retrieval.
 Tech Stack:
 
