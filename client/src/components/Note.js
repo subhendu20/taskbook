@@ -75,16 +75,16 @@ function Note(props) {
                     setCheckboxValue(checked);
 
                     if (checked) {
-                              // Send an Axios request when the checkbox is checked
+                              
                               axios.put(`/user/notes/updatestatus/${noteid}`, { checkboxValue }, {
                                         withCredentials: true
-                              }).then(response => {
+                              }).then(() => {
                                         
                                                   dispatch(countIncrease())
                                         })
                                         .catch(error => {
                                         
-                                                  alert(error)
+                              
                                         });
                     }
 

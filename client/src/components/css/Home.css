@@ -267,17 +267,28 @@ div.track-tasks span p.count{
 }
 
 @media (max-width:700px) {
+          .App-home {
+                    height: auto;
+                    min-height:calc(var(--vh, 1vh) * 100);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+          }
           .App-home .content .form-section{
                     width: 100%;
                     margin: 10% 0px;
                     height: 50%;
           }
           .App-home .content{
-                    height: 100%;
+
                     
                     flex-direction: column;
                     justify-content: center;
-          ;
+          
+          }
+          .App-home .content .content-desc{
+                    height:100% ;
+
           }
           
           .App-home .content .content-desc h1{
@@ -354,12 +365,7 @@ div.track-tasks span p.count{
           #error-addnote i{
                     font-size: 15px;
           }
-          .App-home .content .content-desc a{
-                    
-                    font-size: 15px!important;
-                    
           
-          }
 
           
 }
