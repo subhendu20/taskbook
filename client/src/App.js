@@ -10,7 +10,7 @@ import Signup from './components/Signup';
 import Login from './components/Login';
 import axios from 'axios'
 import Cookies from 'universal-cookie'
-import Dashboard from './components/Dashboard';
+
 import { useSelector } from 'react-redux/es/hooks/useSelector';
 import { useDispatch } from 'react-redux';
 import { logout } from './actions';
@@ -117,22 +117,27 @@ function App() {
         </span>
         <header>
         <nav className="nav">
-          <div className="logo">
-            <img src={logo} alt="logo" />
+          <span className="logo">
+            Taskbook
 
-          </div>
-          <div className="menu">
-            {(logstate === false) ? <span ><Link to="/signup" className='block'>Sign up</Link></span> : <span onClick={view_signup}><p>Sign out</p></span>}
+          </span>
+          <span className="menu">
+            {(!logstate) ? <span ><Link to="/">Home</Link> <Link to='./login'>Sign in</Link>   <Link id='add-task' to="/signup" className='block'>Add Your First task</Link></span>
+             :
+              <span onClick={view_signup}> 
+              <Link to="/">Home</Link>
+               
+                <button>Sign out</button></span>}
 
 
-            <span><Link to="/" className='menu-lite'><i class='bx bx-home'></i></Link></span>
-          </div>
+            
+          </span>
 
         </nav>
         </header>
         <Routes className="route">
           <Route path='/' element={<Home />} />
-          <Route path='/dashboard' element={<Dashboard />} />
+          
 
           <Route path='/signup' element={<Signup />} />
           <Route path='/login' element={<Login />} />

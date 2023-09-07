@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './Noteitems.css'
+import './css/Noteitems.css'
 import axios from 'axios'
 import './css/Note.css'
 import { useSelector } from 'react-redux/es/hooks/useSelector';

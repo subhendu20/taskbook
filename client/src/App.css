@@ -1,211 +1,268 @@
 .App {
-  
-  background-image: url('./mountain-7690893_1920.jpg');
+
+  background-color: rgb(9, 15, 26);
   background-size: cover;
   background-attachment: fixed;
-  display:flex;
+  display: flex;
   flex-direction: column;
   position: relative;
   width: 100%;
   height: calc(var(--vh, 1vh) * 100);
-  
-  
+
+
 }
 
-header{
+header {
   width: 100%;
   height: auto;
   position: fixed;
   z-index: 2;
 }
 
-.App nav{
-  width:100%;
+.App nav {
+  width: 100%;
 
-  background-color:none;
-  
-  
+  background-color: none;
+
+
   height: auto;
-  
+
 
   display: flex;
   justify-content: space-between;
-  padding:5px;
+  padding:10px;
+  
   align-items: center;
 
 }
-.black{
-  background-color: black;
-  color:white;
+
+.black {
+  background-color: rgb(8, 8, 19);
+  color: rgb(165, 163, 163);
   transition: 0.5s;
-  box-shadow: 0px 0.5px 8px 0px grey;
-  padding: 0px!important;
+  box-shadow: 0px 0.5px 8px 0px rgb(45, 72, 230);
+  padding: 0px !important;
 }
-.App .route{
-  width:100%;
+
+.App .route {
+  width: 100%;
   height: 100%;
   position: relative;
   z-index: 1;
 }
-.App nav .logo{
-  
-  
+
+.App nav .logo {
+
+
   margin: 5px 0px;
-  
-  
+
+
 
 }
-.App nav .logo img{
- width: 80px;
- height: 80px;
+
+.App nav .logo  {
+  font-size: 30px;
+  color: rgb(69, 128, 238);
+  font-weight: 600;
+
 
 }
-.App nav .logo b:hover{
-  background-color: rgb(29, 28, 28);
-  color:green
-}
-.App nav .menu{
+
+
+
+.App nav .menu {
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
   font-size: 20px;
-  
-}
-.App nav .menu span{
-
-  
-  margin:0px 2rem;
-  
-
-  
-
 
 }
-.App nav .menu span p{
-  color:white;
-  display:inline;
-  cursor: pointer;
-}
-.App nav .menu span p:hover{
-  color:green;
-  transform: scale(1.1);
+
+.App nav .menu span {
+
+
+  display: flex;
+  align-items: center;
+
+
+
+
+
 }
 
-.App nav .menu span a{
-  text-decoration: none;
-  color: white;
-  font-size: 20px;
+.App nav .menu span button {
+  border:none;
+  color: rgb(165, 163, 163);
+  font-size: 15px;
   display: inline;
+  margin:0px 20px;
   cursor: pointer;
+  font-weight: 500;
+  background: none;
+  transition: 0.3s;
 }
-.App nav .menu span a i{
+.App nav .menu span button:hover {
+  color: rgb(69, 128, 238);
+
+  
+}
+
+
+
+.App nav .menu span a {
+  text-decoration: none;
+  color: rgb(165, 163, 163);
+  font-size: 15px;
+  display: inline;
+  margin:0px 20px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.App nav .menu span a#add-task {
+  text-decoration: none;
+  color: rgb(207, 205, 205);
+  font-weight: 400;
+  background-color: rgb(23, 69, 153);
+  border-radius: 5px;
+  padding: 10px;
+
+  font-size: 15px;
+  text-align: center;
+  width: fit-content;
+}
+.App nav .menu span a#add-task:hover{
+  background-color: rgb(52, 111, 219);
+};
+
+
+
+
+.App nav .menu span a i {
   font-size: 25px;
 }
-.App nav .menu span a i:hover{
-  color:green;
+
+.App nav .menu span a i:hover {
+  color: rgb(69, 128, 238);
 
 }
-.App nav .menu span a:hover{
-  color:green;
-  transform: scale(1.1);
+
+.App nav .menu span a:hover {
+  color:rgb(69, 128, 238);
 }
-.App nav .menu span a:active{
-  color:green;
-  
+
+.App nav .menu span a:active {
+  color: rgb(69, 128, 238);;
+
 }
-.none{
+
+.none {
   display: none;
 }
-.block{
+
+.block {
   display: inline;
 }
 
-#warning-logout{
- 
+#warning-logout {
+
   position: absolute;
   width: 20%;
   left: 40%;
-  top:40%;
+  top: 40%;
   padding: 10px;
   background-color: rgb(180, 178, 178);
-  z-index:15;
+  z-index: 15;
   border-radius: 10px;
-  
+
 
 }
-#warning-logout.none{
-  display:none;
+
+#warning-logout.none {
+  display: none;
 }
-#warning-logout p{
+
+#warning-logout p {
   width: 100%;
   text-align: center;
   font-size: 15px;
   padding: 10px;
 }
-#warning-logout .buttons{
+
+#warning-logout .buttons {
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
-#warning-logout .buttons button{
-  padding:10px;
+
+#warning-logout .buttons button {
+  padding: 10px;
   border: none;
   border-radius: 5px;
   background-color: rgb(49, 47, 47);
-  color:gray;
+  color: gray;
   font-size: 15px;
   margin: 0px 10px;
   transition: 0.2s;
 
 }
-#warning-logout .buttons button:hover{
+
+#warning-logout .buttons button:hover {
   background-color: rgb(8, 8, 8);
-  color:white;
+  color: white;
 }
 
 
 
 
 @media (max-width:600px) {
-  .App nav{
-    min-height:auto;
+  .App nav {
+    min-height: auto;
     height: auto;
-    padding: 5px!important;
+    padding: 5px !important;
   }
-  .App .route{
+
+  .App .route {
     height: 100%;
   }
-  .App nav .logo img{
+
+  .App nav .logo img {
     width: 50px;
-    height:50px;
+    height: 50px;
   }
-  
-  .App nav .menu span a{
+
+  .App nav .menu span a {
     font-size: 15px;
     word-wrap: normal;
     width: auto;
   }
-  .App nav .menu span a i{
+
+  .App nav .menu span a i {
     font-size: 20px;
 
   }
-  .App nav .menu span p{
+
+  .App nav .menu span p {
     font-size: 15px;
     word-wrap: normal;
     width: auto;
   }
-  #warning-logout p{
-    font-size: 10px;
-  }
-  #warning-logout .buttons button{
-    font-size: 10px;
-  }
-  #warning-logout{
-    width: 60%;
-    left:20%;
-  }
- 
 
-  
+  #warning-logout p {
+    font-size: 10px;
+  }
+
+  #warning-logout .buttons button {
+    font-size: 10px;
+  }
+
+  #warning-logout {
+    width: 60%;
+    left: 20%;
+  }
+
+
+
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import Noteitem from './Noteitem'
+
 import { useState } from 'react'
 import axios from 'axios'
 import { useEffect } from 'react'
@@ -15,6 +15,7 @@ import { useSelector } from 'react-redux/es/hooks/useSelector';
 import { useDispatch } from 'react-redux';
 import { countDecrease } from '../actions/controldel&upd';
 import { countIncrease } from '../actions/controldel&upd';
+import Note from './Note'
 
 
 function Home() {
@@ -24,25 +25,14 @@ function Home() {
 
 
     const navigate = useNavigate()
+    //------------------------------------states---------------------------------------//
     const [api, setapi] = useState({ article: [], loading: true })
     const [names, setnames] = useState({ names: [] })
     const[error,seterror]=useState('Please fill all the details about your task')
     const [addNote, setaddNote] = useState(false)
-    //--------------------------------------fetch name list----------------------------//
-    const getnamelist = () => {
+    const[status,setstatus]=useState({pending:0,done:0})
 
-        axios.get('/user/getallnames', {
-            withCredentials: true
-
-        }).then(async (res) => {
-
-            setnames({ names: res.data })
-        }).catch((e) => {
-
-
-
-        })
-    }
+    
 
     //--------------------------------------fetch tasks---------------------------------//
     const getapi = () => {
@@ -61,15 +51,10 @@ function Home() {
     }
 
 
-    useEffect(() => {
-        getapi()
-    }, [addNote, countstate,logstate])
+  
 
 
-    useEffect(() => {
-        getnamelist()
-    }, [logstate])
-
+   
 
     const [data, setdata] = useState({ userid: "", title: "", date: "", description: "", member: [] })
     const change = async (e) => {
@@ -78,7 +63,7 @@ function Home() {
 
     }
 
-    //------------------------------------------post note------------------------------------------------//
+    //------------------------------------------post tasks------------------------------------------------//
     const submit = async (e) => {
         e.preventDefault()
 
@@ -128,6 +113,35 @@ function Home() {
 
 
     }
+    //----------------------------------------------fetch status--------------------------------------------//
+    const getstatus =()=> {
+
+        axios.get('/user/notes/fetchstatus', {
+            withCredentials: true
+        }).then(async (res) => {
+            if (res.status === 200) {
+                
+                setstatus({ pending: res.data.pending, done: res.data.done })
+
+            }
+            if (res.status === 400) {
+                setapi({ pending: 0,  done: 0 })
+
+            }
+        }).catch((e) => {
+    
+
+        })
+    }
+    //------------------------------------------- mount component-------------------------------------------//
+    useEffect(() => {
+        getapi()
+        getstatus()
+    }, [addNote, countstate,logstate])
+
+
+
+
     const hide_error_addnote = () => {
         $('#error-addnote').toggleClass('none')
 
@@ -135,73 +149,64 @@ function Home() {
 
     return (
         <main className='App-home'>
-            <div className="content">
-                <div className="content-desc">
-                    <p>Where great people maintain Harder tasks</p>
-                    <Link to='/dashboard'>Go to dashboard</Link>
+            <section className="content">
+                {!logstate && <div className="content-desc">
+                    <h1>E-TaskBook</h1>
+                    <h3>Add your Task and track your activity</h3>
+                    
+             <Link to='/login'>Add your first task <i class='bx bx-chevron-right'></i></Link>
 
 
 
                 </div>
-                <form method="POST" className="form">
+}
+                {/* ------------------------------------add task form-------------------------------------------*/}
+
+                {logstate && <section class='form-section'>
+                    <h3>Add your task here</h3>
+                    <form method="POST" className="form">
                     <span id='error-addnote' className='none'><p>{error}</p><i class='bx bx-x' onClick={hide_error_addnote}></i></span>
 
-                    <span>Title :<input type="text" name='title' placeholder='Title' onChange={change} className='form-input' /></span>
-                    <span>Due Date :<input type='date' name="date" placeholder='Date' value="2017-06-01" onChange={change} className='form-input' /></span>
-                    <span>Description :<input type='text' name='description' placeholder='Description' onChange={change} className='form-input' /></span>
-                    <span> Select members: <FormControl className='span-formcontrol' size='small' fullWidth id="standard-basic" color="primary"
-                        autoComplete="off" >
-                        <InputLabel>Select members</InputLabel>
-
-                        <Select className='form-input2'
-                            multiple
-                            value={data.member}
-                            onChange={(e) => setdata({ ...data, member: e.target.value })}
-                            input={<OutlinedInput label="Multiple Select" />}
-                            renderValue={(selected) => (
-                                <Stack gap={1} direction="row" flexWrap="wrap" >
-                                    {data.member.length !== 0 && data.member.map((value) => (
-                                        <Chip key={value} label={value} className='form-input2' />
-                                    ))}
-                                </Stack>
-                            )}
-                        >
-                            {names.names.length !== 0 && names.names.map((name) => (
-                                <MenuItem key={name} value={name} className='form-input'>
-                                    {name}
-                                </MenuItem>
-                            ))}
-                        </Select>
-                    </FormControl>
-                    </span>
+                    <span><label htmlFor="title">Title</label><input type="text" name='title' placeholder='Title' onChange={change} className='form-input' /></span>
+                    <span><label htmlFor="date">Due date</label><input type='date' name="date" placeholder='Date' value="2017-06-01" onChange={change} className='form-input' /></span>
+                    <span><label htmlFor="description">Description</label><input type='text' name='description' placeholder='Description' onChange={change} className='form-input' /></span>
+                    
 
                     <span className='button'><button type='submit' onClick={submit}>Add Note</button></span>
                 </form>
+                <div className="track-tasks">
+                              <span>
+                              <i class='bx bxs-user-check'></i>
+                              <p  className='count'>Done</p>
+                              <p>{status.done}</p>
 
+                              </span>
 
-            </div>
-            {(!api.loading && logstate) &&  <div className="notes">
-                <div className="title"><b>Your tasks</b> </div>
+                              <span>
+                              <i class='bx bx-loader-circle'></i>
+                              <p className='count'>Pending</p>
+                              <p>{status.pending}</p>
+
+                              </span>
+
+                    </div>
+                </section>
+               
+                }
 
                 {
-                    !api.loading && <div className="note-items">
-
+                    (logstate ) && <div className="tasks">
                         {
-                            api.article.map((e) => {
-                                return <Noteitem note={e} key={e._id} />
-                            })
+                            !api.loading ? api.article.map((e) => {
+                                return <Note note={e} key={e._id} />
+                            }):<div className='tasks-msg'>No Task </div>
                         }
-
-
-
 
                     </div>
                 }
 
-
-
-            </div>
-            }
+            </section>
+           
 
         </main>
     )

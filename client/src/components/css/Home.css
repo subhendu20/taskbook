@@ -14,7 +14,7 @@
 
 .App-home .content {
           width: 100%;
-          min-height: 100%;
+          height: 100%;
           background-color: none;
           position: relative;
           display: flex;
@@ -28,88 +28,92 @@
 }
 
 .App-home .content .content-desc {
-          width: 30%;
+          width: auto;
+          flex:1;
           min-height: 200px;
           display: flex;
           flex-direction: column;
           justify-content: flex-start;
           align-items: center;
-          color: white
+          color: white;
+          transition: 0.3s;
 }
 
+.App-home .content .content-desc h1{
+          color:rgb(37, 88, 182);
+          font-weight: 700;
+          
+         
+          
+          font-size: 80px;
+          text-align: center;
+          width: fit-content;
+
+}
 
 .App-home .content .content-desc a{
           text-decoration: none;
-          color:white;
-          font-weight: 200;
-          background-color: black;
+          color:rgb(207, 205, 205);
+          font-weight: 400;
+          background-color: rgb(23, 69, 153);
           border-radius: 5px;
           padding: 10px;
           margin: 30px 0px;
           font-size: 20px;
           text-align: center;
+          display: flex;
+          align-items: center;
+          transition: 0.3s;
           width: fit-content;
 
 }
-.App-home .content .content-desc p {
-          font-size: 50px;
-          font-weight: 600;
+.App-home .content .content-desc a:hover{
+          background-color: rgb(52, 111, 219);
+}
+.App-home .content .content-desc h3 {
+          font-size: 40px;
+          font-weight: 400;
           text-align: center;
-          margin: 30px 0px;
+          margin: 10px 0px;
+          color:rgb(176, 178, 180);
 
 
 
 }
 
-.App-home .content .content-desc p.desc {
-          font-size: 20px;
-          color: grey
-}
-
-.App-home .content .content-desc p.desc:hover {
-          color: white;
-}
-
-.App-home .content .content-desc span {
-          width: 100%;
+.App-home .content .form-section{
+          width: 30%;
+          margin: 0px 10%;
           display: flex;
-          justify-content: center;
-          padding: 10px;
+          flex-direction: column;
 }
 
-.App-home .content .content-desc span button {
-          padding: 10px;
-          border-radius: 2px;
-          background-color: aliceblue;
-          color: black;
-          border: none;
-          font-size: 20px;
-          transition: 0.2s;
+.App-home .content .form-section h3{
+          color:rgb(134, 131, 131);
+          font-weight: 400;
+          text-align: center;
+          margin:10px 0px;
+          font-size: 30px;
 }
-
-.App-home .content .content-desc span button:hover {
-          background-color: black;
-          color: white;
-        
-}
-
-.App-home .content .form {
+.App-home .content .form-section .form {
           background-color: black;
           display: flex;
           flex-direction: column;
           padding: 30px 10px;
-          width: 30%;
-          margin: 0px 10%;
+          width: 100%;
+          margin: 0px auto;
           opacity: 0.8;
 
           border-radius: 10px;
           position: relative;
           background-position: center;
+          box-shadow: rgba(24, 148, 231, 0.35) 0px 5px 15px;
+         
 
 
 }
 
-.App-home .content .form span {
+.App-home .content .form-section .form span {
           display: flex;
           padding: 10px;
           color: white;
@@ -118,35 +122,35 @@
           margin: 10px 0px;
 
 }
-.App-home .content .form span .span-formcontrol{
+.App-home .content .form-section .form span .span-formcontrol{
           border-bottom: 1px solid grey;
 }
 
-.App-home .content .form span.button {
+.App-home .content .form-section .form span.button {
           width: 100%;
           display: flex;
           justify-content: center;
 
 }
 
-.App-home .content .form span.button button {
-          padding: 15px;
-          background-color: green;
+.App-home .content .form-section .form span.button button {
+          padding: 10px;
+          background-color: rgb(23, 69, 153);;
           color: black;
 
           border: none;
           border-radius: 5px;
           font-size: 15px;
-          transition: 0.2s;
+          transition: 0.3s;
 }
 
-.App-home .content .form span.button button:hover {
-          background-color: rgb(20, 102, 77);
+.App-home .content .form-section .form span.button button:hover {
+          background-color: rgb(52, 111, 219);
           color: white;
           
 }
 
-.App-home .content .form span input {
+.App-home .content .form-section .form span input {
           width: 60%;
           border: none;
           outline: none;
@@ -161,45 +165,81 @@
           color: grey
 }
 
-.App-home .content .form span input:hover {
+.App-home .content .form-section .form span input:hover {
           background-color: rgb(22, 21, 21);
           color: white
 }
 
-.App-home .content .form span input::placeholder {
+.App-home .content .form-section .form span input::placeholder {
           color: gray;
 }
-
-.App-home .notes {
+.App-home .content .tasks{
+          width: 40%;
+          height: 90%;
+          border-radius: 10px;
+          background-color: rgb(6, 39, 70);
+          margin: auto 0px;
+          overflow-y: scroll;
+          
+}
+.App-home .content .tasks-msg{
+          font-size: 15px;
+          color:rgb(187, 185, 185);
+          font-weight: 500;
+          text-align: center;
           width: 100%;
-          height: auto;
-          background-color: black;
-          display: flex;
+          padding: 10px;
+}
+.App-home .content .tasks::-webkit-scrollbar{
+          display: none;
+}
+
+div.track-tasks{
+          width: 100%;
+          height:auto;
+          margin: 30px auto;
+          display:flex;
+          flex-direction: row;
+          justify-content: space-evenly;
+          align-items: center;
+        
+}
+div.track-tasks span{
+          display:flex;
           flex-direction: column;
+          align-items: center;
+          
+}
+div.track-tasks span i{
+          color: rgb(9, 51, 90);
+          font-size: 50px;
+          margin:10px 0px;
+}
+div.track-tasks span p{
+          color:grey;
+          font-size: 30px;
+          margin:10px 0px;
+}
+div.track-tasks span p.count{
+          color:white;
+          font-size: 30px;
+          margin:10px 0px;
 }
 
-.App-home .notes .title {
-          width: 100%;
-          display: flex;
-          font-size: 40px;
-          color: white;
-          padding: 10px;
-          font-weight: 100;
-          justify-content: center;
-}
-.App-home .notes .message{
-          font-size: 40px;
-          color:white
-}
 
-.App-home .note-items {
-          width: 100%;
-          padding: 10px;
-          display: grid;
-          grid-template-columns:1fr 1fr 1fr;
-          grid-column-gap: 20px;
 
-}
+
+
+
+
+
+
+
+
+
+
+
+
 #error-addnote{
           padding:10px;
           position: absolute;

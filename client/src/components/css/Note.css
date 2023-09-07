@@ -1,61 +1,153 @@
-.noteitem .formupdate {
+.Note {
+          width: 50%;
+          height: auto;
+          margin: 10px auto;
+          border-radius: 10px;
+          background-color: rgb(7, 6, 31);
+          display: flex;
+          flex-direction: column;
+          position: relative;
+          padding: 10px;
+}
+
+
+.Note .title {
+          font-size: 20px;
+          color: rgb(23, 69, 153);
+          font-weight: 500;
+          margin: 10px 0px;
+}
+
+.Note .date {
+          font-size: 15px;
+          color: rgb(175, 176, 177);
+          font-weight: 400;
+          margin: 10px 0px;
+}
+
+.Note .description {
+          font-size: 10px;
+          color: rgb(175, 176, 177);
+          font-weight: 300;
+          margin: 10px 0px;
+}
+
+.Note .status {
+          color: rgb(181, 182, 184);
+          font-size: 15px;
+          font-weight: 400;
+          margin: 10px 0px;
+
+}
+
+.Note .status-done {
+          font-size: 15px;
+          color: rgb(74, 134, 245);
+          font-weight: 400;
+          margin: 10px 0px;
+}
+
+.Note .button {
+          width: 100%;
+          display: flex;
+          justify-content: space-evenly;
+}
+
+.Note .button button {
+          padding: 10px;
+          background-color: rgb(23, 69, 153);
+          color: rgb(179, 178, 178);
+
+          border: none;
+          border-radius: 5px;
+          font-size: 15px;
+          transition: 0.3s;
+
+
+}
+.Note .button button.delete-btn{
+          background-color: rgb(204, 200, 200);
+          color:red;
+
+}
+.Note .button button:hover{
+          background-color: rgb(69, 128, 238);
+          color:rgb(190, 186, 186);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.Note .formupdate {
           background-color: black;
-          
+
           flex-direction: column;
           padding: 10px 10px;
           width: 100%;
-          height:100%;
-          
+          height: auto;
+
 
 
           border-radius: 10px;
-          
+
           position: absolute;
-          top:0%;
-          left:0%;
+          top: 0%;
+          left: 0%;
 
 
 }
-.flex{
+
+.flex {
           display: flex;
 }
-.none{
-          display:none;
+
+.none {
+          display: none;
 }
-.noteitem .formupdate span {
+
+.Note .formupdate span {
           display: flex;
           padding: 10px;
           color: white;
           justify-content: space-between;
-          font-size: 20px;
-          
+          font-size: 15px;
+
 
 }
 
-.noteitem .formupdate span.button {
+.Note .formupdate span.button {
           width: 100%;
           display: flex;
           justify-content: center;
 
 }
 
-.noteitem .formupdate span.button button {
+.Note .formupdate span.button button {
           padding: 10px;
-          background-color: green;
+          background-color: rgb(23, 69, 153);
           color: black;
 
           border: none;
           border-radius: 5px;
           font-size: 15px;
+          transition: 0.3s;
 }
 
-.noteitem .formupdate span.button button:hover {
-          background-color: rgb(20, 102, 77);
+.Note .formupdate span.button button:hover {
+          background-color: rgb(52, 111, 219);
           color: white;
-          transform: scale(1.2);
+
 }
 
-.noteitem .formupdate span input {
+.Note .formupdate span input {
           width: 60%;
           border: none;
           outline: none;
@@ -70,11 +162,11 @@
           color: grey
 }
 
-.noteitem .formupdate span input:hover {
+.Note .formupdate span input:hover {
           background-color: rgb(22, 21, 21);
           color: white
 }
 
-.noteitem .formupdate span input::placeholder {
+.Note .formupdate span input::placeholder {
           color: gray;
 }

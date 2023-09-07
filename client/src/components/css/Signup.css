@@ -67,23 +67,26 @@
 
 .main .form span.button button {
           padding: 10px;
-          font-size: 20px;
-          background-color: green;
+          font-size: 15px;
+          background-color: rgb(23, 69, 153);
           border: none;
           border-radius: 5px;
           color: black;
           transition: 0.2s;
+          font-weight: 400;
 }
 
 .main .form span.button button:hover {
-          background-color: rgb(20, 102, 77);
+          background-color: rgb(52, 111, 219);
+
           color: white;
 
 }
 
 .main .form span a {
           text-decoration: none;
-          color: green;
+          color: rgb(23, 69, 153);
+          font-weight: 500;
 }
 
 .main .form span.button {
