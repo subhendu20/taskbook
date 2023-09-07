@@ -14,6 +14,7 @@ function Note(props) {
           const [updatevisiblity, setupdatevisiblity] = useState(false)
           const [formdata, setformdata] = useState({ title: "", date: "", description: "", status: "", member: "" })
           const [noteid, setnoteid] = useState(null)
+          const [checkboxValue, setCheckboxValue] = useState(false);
 
 
 
@@ -64,21 +65,30 @@ function Note(props) {
           }
 
 
-          const checked_function=()=>{
-                    axios.put(`/user/notes/updatestatus/${noteid}`,{
-                              withCredentials: true
-                     } ).then((res) => {
-                              
-                              dispatch(countDecrease())
+
+
+
+
+
+          const checked_function = (event) => {
+                    const { checked } = event.target;
+                    setCheckboxValue(checked);
+
+                    if (checked) {
+                              // Send an Axios request when the checkbox is checked
+                              axios.put(`/user/notes/updatestatus/${noteid}`, { checkboxValue }, {
+                                        withCredentials: true
+                              }).then(response => {
+                                        
+                                                  dispatch(countIncrease())
+                                        })
+                                        .catch(error => {
+                                        
+                                                  alert(error)
+                                        });
                     }
 
-                    ).catch(async (e) => {
-
-                    })
           }
-
-
-
 
           return (
                     <div className='Note'>
@@ -93,18 +103,18 @@ function Note(props) {
 
 
                               <div className="title">
-                              {note.title}
+                                        {note.title}
 
                               </div>
-                              <div className="date" >Due date- {note.date.slice(0,10)}
+                              <div className="date" >Due date- {note.date.slice(0, 10)}
                               </div>
                               <div className="description">
-                              {note.description}
-                                        
+                                        {note.description}
+
 
                               </div>
-                              {note.status === 'pending' ? <div className='status'>Pending <input type="checkbox" onChange={checked_function} /> </div> : <div className='status-done'>Done</div>}
-                             
+                              {note.status === 'pending' ? <div className='status'>Pending <input type="checkbox" checked={checkboxValue} onChange={checked_function} /> </div> : <div className='status-done'>Done</div>}
+
                               <div className="button" >
                                         <button onClick={() => update(note._id)}>update<i class='bx bx-edit-alt' ></i></button>
                                         <button className='delete-btn' onClick={() => deleteitem(note._id)} >delete <i class='bx bxs-trash-alt'></i></button>
