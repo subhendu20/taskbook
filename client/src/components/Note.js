@@ -65,7 +65,7 @@ function Note(props) {
 
 
           const checked_function=()=>{
-                    axios.post(`/user/notes/updatestatus/${noteid}`,{
+                    axios.put(`/user/notes/updatestatus/${noteid}`,{
                               withCredentials: true
                      } ).then((res) => {
                               

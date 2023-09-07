@@ -135,7 +135,7 @@ router.post('/delete/:id',async (req, res) => {
 })
 
 //------------------------------------------update status----------------------------------//
-router.post('/updatestatus/:id', async (req, res) => {
+router.put('/updatestatus/:id', async (req, res) => {
           try {
                     
                     
