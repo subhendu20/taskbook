@@ -273,18 +273,13 @@ div.track-tasks span p.count{
                     height: 50%;
           }
           .App-home .content{
+                    height: 100%;
                     
                     flex-direction: column;
                     justify-content: center;
           ;
           }
-          .App-home .content .content-desc {
-                    width:100%;
-                    height:100%!important;
-                    justify-content: center;
-                    align-items: center;
-                    margin:10px 0%;
-          }
+          
           .App-home .content .content-desc h1{
                     font-size: 25px!important;
           }
