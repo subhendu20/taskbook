@@ -122,7 +122,7 @@ function App() {
 
           </span>
           <span className="menu">
-            {(!logstate) ? <span ><Link to="/">Home</Link> <Link to='./login'>Sign in</Link>   <Link id='add-task' to="/signup" className='block'>Add Your First task</Link></span>
+            {(!logstate) ? <span ><Link to="/">Home</Link> <Link to='./login'>Sign in</Link>   <Link id='add-task' to="/signup">Add Your First task</Link></span>
              :
               <span onClick={view_signup}> 
               <Link to="/">Home</Link>

@@ -50,6 +50,10 @@
           width: fit-content;
 
 }
+.App-home .content .content-desc p{
+          font-size: 15px;
+          color:rgb(180, 178, 178);
+}
 
 .App-home .content .content-desc a{
           text-decoration: none;
@@ -262,7 +266,12 @@ div.track-tasks span p.count{
           display: none;
 }
 
-@media (max-width:600px) {
+@media (max-width:700px) {
+          .App-home .content .form-section{
+                    width: 90%;
+                    margin: 10% 0px;
+                    height: 60%;
+          }
           .App-home .content{
                     
                     flex-direction: column;
@@ -275,30 +284,39 @@ div.track-tasks span p.count{
                     align-items: center;
                     margin:10px 0%;
           }
-          .App-home .content .form{
+          .App-home .content .content-desc h1{
+                    font-size: 25px!important;
+          }
+          .App-home .content .content-desc h3{
+                    font-size: 15px;
+                    font-weight: 500;
+          }
+          .App-home .content .content-desc p{
+                    font-size: 10px!important;
+                    color:gray;
+                    text-align: justify;
+                    padding:10px 30px;
+          }
+          .App-home .content .form-section .form{
                     width:80%;
                     padding:10px 10px;
-                    margin:0px 0px;
+                    margin:0px auto;
           }
          
-          .App-home .notes .title {
-                    font-size: 20px;
-          }
-          .App-home .notes .message{
-                    font-size: 20px;
-          }
-          .App-home .note-items{
-                    grid-template-columns: 1fr;
-                    grid-column-gap: 0px;
-          }
-          .App-home .content .form span{
+          
+          .App-home .content .form-section .form span{
                     padding:5px;
                     font-size: 15px;
           }
-          .App-home .content .form span.button button{
+          .App-home .content .form-section .form span.button button{
                     padding:10px;
                     font-size: 10px;
           }
+          .App-home .content .form-section h3{
+                    font-size: 15px;
+          }
+
+
           .App-home .content .content-desc a{
                  
                     font-size: 15px;
@@ -306,20 +324,42 @@ div.track-tasks span p.count{
                    
           
           }
-          .App-home .content .content-desc p {
-                    font-size: 20px;
-                    font-weight: 400;
-                    margin:10px;
-                   
+          .App-home .content .tasks{
+                    width: 90%;
+                    height:auto;
+
+          }
+          div.track-tasks span i{
           
-          
+                    font-size: 30px;
           
           }
+          div.track-tasks span p{
+          
+                    font-size: 20px;
+                    
+          }
+          div.track-tasks span p.count{
+                    
+                    font-size: 20px;
+                    
+          }
+
+
+
+
+          
           #error-addnote{
                     font-size: 10px;
           }
           #error-addnote i{
                     font-size: 15px;
+          }
+          .App-home .content .content-desc a{
+                    
+                    font-size: 15px!important;
+                    
+          
           }
 
           

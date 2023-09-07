@@ -150,9 +150,10 @@ function Home() {
     return (
         <main className='App-home'>
             <section className="content">
-                {!logstate && <div className="content-desc">
-                    <h1>E-TaskBook</h1>
+                {logstate && <div className="content-desc">
+                    <h1>TaskBook</h1>
                     <h3>Add your Task and track your activity</h3>
+                    <p>Streamline your daily tasks and enhance productivity with our intuitive task app. Effortlessly organize, prioritize, and track your to-do lists for a more efficient workflow</p>
                     
              <Link to='/login'>Add your first task <i class='bx bx-chevron-right'></i></Link>
 
@@ -162,7 +163,7 @@ function Home() {
 }
                 {/* ------------------------------------add task form-------------------------------------------*/}
 
-                {logstate && <section class='form-section'>
+                {!logstate && <section class='form-section'>
                     <h3>Add your task here</h3>
                     <form method="POST" className="form">
                     <span id='error-addnote' className='none'><p>{error}</p><i class='bx bx-x' onClick={hide_error_addnote}></i></span>
@@ -195,7 +196,7 @@ function Home() {
                 }
 
                 {
-                    (logstate ) && <div className="tasks">
+                    (!logstate ) && <div className="tasks">
                         {
                             !api.loading ? api.article.map((e) => {
                                 return <Note note={e} key={e._id} />

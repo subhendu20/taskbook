@@ -64,6 +64,20 @@ function Note(props) {
           }
 
 
+          const checked_function=()=>{
+                    axios.post(`/user/notes/updatestatus/${noteid}`,{
+                              withCredentials: true
+                     } ).then((res) => {
+                              
+                              dispatch(countDecrease())
+                    }
+
+                    ).catch(async (e) => {
+
+                    })
+          }
+
+
 
 
           return (
@@ -89,7 +103,7 @@ function Note(props) {
                                         
 
                               </div>
-                              {note.status === 'pending' ? <div className='status'>Pending <input type="checkbox" /> </div> : <div className='status-done'>Done</div>}
+                              {note.status === 'pending' ? <div className='status'>Pending <input type="checkbox" onChange={checked_function} /> </div> : <div className='status-done'>Done</div>}
                              
                               <div className="button" >
                                         <button onClick={() => update(note._id)}>update<i class='bx bx-edit-alt' ></i></button>
