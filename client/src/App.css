@@ -208,8 +208,14 @@ header {
 
 
 
-@media (max-width:700px) {
+@media (max-width:600px) {
+  .App {
+
+    height: auto;
+    min-height: calc(var(--vh, 1vh) * 100);
   
+  
+  }
   .App nav {
     min-height: auto;
     height: auto;
