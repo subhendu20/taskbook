@@ -94,9 +94,9 @@ function Note(props) {
                     <div className='Note'>
                               <form method="POST" className={!updatevisiblity ? "formupdate none" : "formupdate flex"}>
 
-                                        <span><label htmlFor="title">title</label><input type="text" name='title' placeholder='Title' onChange={change} /></span>
-                                        <span><label htmlFor="date">Due date</label><input type='date' name="date" placeholder='Date' onChange={change} /></span>
-                                        <span><label htmlFor="description">Description</label><input type='text' name='description' placeholder='Description' onChange={change} /></span>
+                                        <span><label htmlFor="title">title</label><input type="text" name='title' value={note.title} placeholder='Title' onChange={change} /></span>
+                                        <span><label htmlFor="date">Due date</label><input type='date' name="date" value={note.date} placeholder='Date' onChange={change} /></span>
+                                        <span><label htmlFor="description">Description</label><input type='text' value={note.description} name='description' placeholder='Description' onChange={change} /></span>
                                         <span className='button'><button type='submit' onClick={setupdate}>Update</button></span>
                               </form>
 
