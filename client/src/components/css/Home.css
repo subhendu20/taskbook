@@ -268,9 +268,9 @@ div.track-tasks span p.count{
 
 @media (max-width:700px) {
           .App-home .content .form-section{
-                    width: 90%;
+                    width: 100%;
                     margin: 10% 0px;
-                    height: 60%;
+                    height: 50%;
           }
           .App-home .content{
                     
@@ -326,22 +326,25 @@ div.track-tasks span p.count{
           }
           .App-home .content .tasks{
                     width: 90%;
-                    height:auto;
+                    height:50%!important;
 
           }
           div.track-tasks span i{
           
-                    font-size: 30px;
+                    font-size: 25px;
+                    margin:5px 0px;
           
           }
           div.track-tasks span p{
           
                     font-size: 20px;
+                    margin:5px 0px;
                     
           }
           div.track-tasks span p.count{
                     
                     font-size: 20px;
+                    margin:5px 0px;
                     
           }
 

@@ -22,12 +22,7 @@ const task = new mongoose.Schema({
                     type:String,
                     required:true
           }
-          ,
-          members:{
-                    type: Array, 
-                    required: true 
-                    
-          }
+         
 })
 const notedata = new mongoose.model('taskt',task)
 module.exports=notedata;

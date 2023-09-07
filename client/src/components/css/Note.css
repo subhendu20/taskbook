@@ -170,3 +170,85 @@
 .Note .formupdate span input::placeholder {
           color: gray;
 }
+
+@media (max-width:700px){
+          .Note{
+                    width: 90%;
+          }
+          .Note .title {
+                    font-size: 15px;
+                    
+                    margin: 5px 0px;
+          }
+          
+          .Note .date {
+                    font-size: 10px;
+                  
+                    margin: 5px 0px;
+          }
+          
+          .Note .description {
+                    font-size: 10px;
+                   
+                    margin: 5px 0px;
+          }
+          
+          .Note .status {
+                    color: rgb(181, 182, 184);
+                    font-size: 15px;
+                    font-weight: 400;
+                    margin: 5px 0px;
+          
+          }
+          
+          .Note .status-done {
+                    font-size: 15px;
+                    color: rgb(74, 134, 245);
+                    font-weight: 400;
+                    margin: 10px 0px;
+          }
+          
+          .Note .button {
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-evenly;
+          }
+          
+          .Note .button button {
+                    padding: 10px;
+                    
+                    font-size: 10px;
+                    
+          
+          }
+
+          .Note .formupdate span {
+                    
+                    font-size: 15px;
+          
+          
+          }
+          
+          .Note .formupdate span.button {
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+          
+          }
+          
+          .Note .formupdate span.button button {
+                   
+                    font-size: 10px;
+                    
+          }
+          
+          .Note .formupdate span.button button:hover {
+                    background-color: rgb(52, 111, 219);
+                    color: white;
+          
+          }
+          
+          
+          
+
+}

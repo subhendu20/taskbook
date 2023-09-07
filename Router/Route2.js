@@ -27,14 +27,14 @@ function removeDuplicates(arr) {
 // ---------------------------------post note--------------------------------//
 router.post('/postnote', async (req, res) => {
           try {
-                    const { title, description, date, member } = req.body
+                    const { title, description, date} = req.body
 
                     const getcookie = await req.cookies.signintoken
 
                     if (!getcookie) {
                               return res.status(400).send("you have too logged in first")
                     }
-                    console.log(member)
+                    
                     const check = await JWT.verify(getcookie, jwttk)
                     if (!check) {
                               return res.send("you are logged out")
@@ -42,7 +42,7 @@ router.post('/postnote', async (req, res) => {
 
 
                     const newnote = new note({
-                              userid: check, title, description, date, members:member ,status:"pending"
+                              userid: check, title, description, date,status:"pending"
                     })
                     newnote.save().then(() => {
                               console.log(newnote)
@@ -154,7 +154,7 @@ router.post('/updatestatus/:id', async (req, res) => {
                     find.title=find.title
                     find.description=find.description
                     find.date = find.date
-                    find.members = find.members
+                    
 
                    
 
