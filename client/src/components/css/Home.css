@@ -275,6 +275,7 @@ div.track-tasks span p.count{
           .App-home .content{
                     
                     flex-direction: column;
+                    justify-content: center;
           ;
           }
           .App-home .content .content-desc {
