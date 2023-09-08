@@ -269,8 +269,7 @@ div.track-tasks span p.count{
 @media (max-width:700px) {
           .App-home {
                     height: auto;
-                    min-height: 100vh;
-                    min-height:-webkit-fill-available;
+                    min-height:calc(var(--vh, 1vh) * 100);
                     display: flex;
                     justify-content: center;
                     align-items: center;
