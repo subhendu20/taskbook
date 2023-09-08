@@ -65,8 +65,8 @@ function Login() {
                     <section className='main'>
                               <form className="form">
                                 <span id='error-login' className='none'><p>Invalid details</p><i class='bx bx-x' onClick={hide_error_logwarn}></i></span>
-                                        <span><label htmlFor="mobile">Mobile</label><input type="Number" placeholder="Enter Mobile Number" name="mobile" onChange={change} /></span>
-                                        <span><label htmlFor="password">Password</label><input type="password" placeholder="Enter password" name="password" onChange={change} /></span>
+                                        <span><label htmlFor="mobile">Mobile</label><input type="Number" autocomplete="off" value={formdata.mobile} placeholder="Enter Mobile Number" name="mobile" onChange={change} /></span>
+                                        <span><label htmlFor="password">Password</label><input type="password" autocomplete="off" value={formdata.password}  placeholder="Enter password" name="password" onChange={change} /></span>
                                         <span className='button'><button onClick={submit}>Log in</button></span>
                                         <span className='signuplink'><p>Don't have an Account?</p><Link to="/signup">Sign up</Link></span>
 

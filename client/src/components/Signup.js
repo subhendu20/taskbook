@@ -70,12 +70,12 @@ function Signup() {
                                         <span id="error-signup" className='none'>
                                                   <p>Please fill the form correctly</p><i onClick={hide_error} class='bx bx-x'></i>
                                         </span>
-                                        <span><label htmlFor="name">Name</label><input type="text" name="name" onChange={change} required minLength={5} /></span>
-                                        <span><label htmlFor="email">Email</label><input type='email' name="email" onChange={change} /> </span>
-                                        <span><label htmlFor="dob">D.O.B</label><input type="date" name="dob" onChange={change} required/> </span>
-                                        <span><label htmlFor="mobile">Mobile</label><input type="text" name="mobile" onChange={change} required minLength={10}/> </span>
-                                        <span><label htmlFor="password">Password</label><input type="password" name="password" onChange={change} required minLength={5} maxLength={15} /> </span>
-                                        <span><label htmlFor="confirmpassword">Confirm password</label><input type="password" name="confirmpassword" onChange={change} required/> </span>
+                                        <span><label htmlFor="name">Name</label><input autocomplete="off" type="text" value={formdata.name} name="name" onChange={change} required minLength={5} /></span>
+                                        <span><label htmlFor="email">Email</label><input autocomplete="off" type='email' value={formdata.email} name="email" onChange={change} /> </span>
+                                        <span><label htmlFor="dob">D.O.B</label><input autocomplete="off" type="date" name="dob" value={formdata.dob} onChange={change} required/> </span>
+                                        <span><label htmlFor="mobile">Mobile</label><input autocomplete="off" type="text" name="mobile" value={formdata.mobile} onChange={change} required minLength={10}/> </span>
+                                        <span><label htmlFor="password">Password</label><input autocomplete="off" type="password" name="password" value={formdata.password} onChange={change} required minLength={5} maxLength={15} /> </span>
+                                        <span><label htmlFor="confirmpassword">Confirm password</label><input autocomplete="off" type="password" value={formdata.confirmpassword} name="confirmpassword" onChange={change} required/> </span>
                                         <span className='button'><button onClick={handlesubmit}>Sign Up</button></span>
                                         <span className='message'>Have an Account <Link to="/login">Log In</Link></span>
 
