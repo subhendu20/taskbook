@@ -37,13 +37,26 @@ function App() {
     let vh = window.innerHeight * 0.01;
 
     document.documentElement.style.setProperty('--vh', `${vh}px`);
-   
-      window.addEventListener('orientationchange', function () {
+
+
+    window.addEventListener('resize', function () {
+      if (window.innerHeight > 600) {
         vh = window.innerHeight * 0.01;
-    
+
         document.documentElement.style.setProperty('--vh', `${vh}px`);
-      
-      })
+
+
+      }
+
+
+
+
+
+    })
+
+
+
+
 
   }, [])
 
@@ -60,8 +73,8 @@ function App() {
     })
   })
 
-  
-  
+
+
   useEffect(() => {
 
 
@@ -82,28 +95,28 @@ function App() {
     }).then(async (res) => {
 
       if (res.data === "logout") {
-      
+
         await cookie.remove('signintoken')
         await localStorage.removeItem('signintoken')
         $('#warning-logout').toggleClass('none')
 
         dispatch(logout())
         navigate('/')
-}
-}).catch((e) => {
+      }
+    }).catch((e) => {
 
 
     })
 
   }
 
-  const view_signup=()=>{
+  const view_signup = () => {
     $('#warning-logout').toggleClass('none')
   }
 
 
 
-  const hide_signout_popup=()=>{
+  const hide_signout_popup = () => {
     $('#warning-logout').toggleClass('none')
 
   }
@@ -111,15 +124,15 @@ function App() {
 
 
   return (
-    
-      <div className="App">
-        <span id="warning-logout" className='none'>
-          <p>Do you want to Sign out</p>
-          <span className="buttons"><button onClick={signout}>Log out</button>
+
+    <div className="App">
+      <span id="warning-logout" className='none'>
+        <p>Do you want to Sign out</p>
+        <span className="buttons"><button onClick={signout}>Log out</button>
           <button onClick={hide_signout_popup}>Cancel</button></span>
 
-        </span>
-        <header>
+      </span>
+      <header>
         <nav className="nav">
           <span className="logo">
             Taskbook
@@ -127,31 +140,31 @@ function App() {
           </span>
           <span className="menu">
             {(!logstate) ? <span ><Link to="/">Home</Link> <Link to='./login'>Sign in</Link>   <Link id='add-task' to="/signup">Add Your First task</Link></span>
-             :
-              <span > 
-              <Link to="/">Home</Link>
-               
+              :
+              <span >
+                <Link to="/">Home</Link>
+
                 <button onClick={view_signup}>Sign out</button></span>}
 
 
-            
+
           </span>
 
         </nav>
-        </header>
-        <Routes className="route">
-          <Route path='/' element={<Home />} />
-          
-
-          <Route path='/signup' element={<Signup />} />
-          <Route path='/login' element={<Login />} />
+      </header>
+      <Routes className="route">
+        <Route path='/' element={<Home />} />
 
 
+        <Route path='/signup' element={<Signup />} />
+        <Route path='/login' element={<Login />} />
 
 
-        </Routes>
-      </div>
-    
+
+
+      </Routes>
+    </div>
+
 
   );
 }
