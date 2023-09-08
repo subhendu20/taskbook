@@ -175,7 +175,7 @@ function Home() {
                     <span><label htmlFor="description">Description</label><input type='text' name='description' placeholder='Description' onChange={change} className='form-input' /></span>
                     
 
-                    <span className='button'><button type='submit' onClick={submit}>Add Note</button></span>
+                    <span className='button'><button type='submit' onClick={submit}>Add Task</button></span>
                 </form>
                 <div className="track-tasks">
                               <span>
