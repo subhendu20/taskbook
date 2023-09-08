@@ -136,8 +136,11 @@ router.post('/delete/:id',async (req, res) => {
 
 //------------------------------------------update status----------------------------------//
 router.put('/updatestatus/:id', async (req, res) => {
+    
           try {
-                    console.log(req.body)
+
+
+                
                     
                     const getcookie = await req.cookies.signintoken
                     if (!getcookie) {
