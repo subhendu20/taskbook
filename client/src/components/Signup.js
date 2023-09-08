@@ -66,7 +66,7 @@ function Signup() {
           
           return (
                     <section className='main'>
-                              <form className="form">
+                              <form className="form" onSubmit={handlesubmit}>
                                         <span id="error-signup" className='none'>
                                                   <p>Please fill the form correctly</p><i onClick={hide_error} class='bx bx-x'></i>
                                         </span>
@@ -76,7 +76,7 @@ function Signup() {
                                         <span><label htmlFor="mobile">Mobile</label><input autocomplete="off" type="text" name="mobile" value={formdata.mobile} onChange={change} required minLength={10}/> </span>
                                         <span><label htmlFor="password">Password</label><input autocomplete="off" type="password" name="password" value={formdata.password} onChange={change} required minLength={5} maxLength={15} /> </span>
                                         <span><label htmlFor="confirmpassword">Confirm password</label><input autocomplete="off" type="password" value={formdata.confirmpassword} name="confirmpassword" onChange={change} required/> </span>
-                                        <span className='button'><button onClick={handlesubmit}>Sign Up</button></span>
+                                        <span className='button'><button type='submit' >Sign Up</button></span>
                                         <span className='message'>Have an Account <Link to="/login">Log In</Link></span>
 
 

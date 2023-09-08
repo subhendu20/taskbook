@@ -14,13 +14,16 @@ import "jquery-ui-dist/jquery-ui";
 function Login() {
   
   const dispatch = useDispatch()
-  const cookie = new Cookies()
+  
           const navigate = useNavigate()
 
           const [formdata, setformdata] = useState({mobile: "", password: ""})
           const change = (e) => {
                     setformdata({ ...formdata, [e.target.name]: e.target.value })
           }
+
+
+
           const submit = async(e) => {
 
                     e.preventDefault()
@@ -63,11 +66,11 @@ function Login() {
 
           return (
                     <section className='main'>
-                              <form className="form">
+                              <form className="form" onSubmit={submit}>
                                 <span id='error-login' className='none'><p>Invalid details</p><i class='bx bx-x' onClick={hide_error_logwarn}></i></span>
                                         <span><label htmlFor="mobile">Mobile</label><input type="Number" autocomplete="off" value={formdata.mobile} placeholder="Enter Mobile Number" name="mobile" onChange={change} /></span>
                                         <span><label htmlFor="password">Password</label><input type="password" autocomplete="off" value={formdata.password}  placeholder="Enter password" name="password" onChange={change} /></span>
-                                        <span className='button'><button onClick={submit}>Log in</button></span>
+                                        <span className='button'><button type='submit'>Log in</button></span>
                                         <span className='signuplink'><p>Don't have an Account?</p><Link to="/signup">Sign up</Link></span>
 
                               </form>
