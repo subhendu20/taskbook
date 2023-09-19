@@ -81,6 +81,7 @@
           position: absolute;
           left:0;
           bottom: 100%;
+          width: 100%;
           border-radius: 5px;
           background-color: rgb(175, 173, 173);
           display: flex;
@@ -98,8 +99,8 @@
           font-size: 20px;
 
 }
-.none{
-          display: none;
+#warning-submit.none{
+          display: none!important;
 }
 @media (max-width:700px){
           .fg-pass{
