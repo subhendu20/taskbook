@@ -4,6 +4,7 @@ const dotenv = require('dotenv').config()
 const middleware = require('body-parser')
 const route1 = require('./Router/Route')
 const route2 = require('./Router/Route2')
+const route3 = require('./Router/Route3')
 const path = require('path')
 const app = express()
 // ---------------------------------------------database connection------------------------------------------//
@@ -22,6 +23,7 @@ app.use(middleware.urlencoded({ extended: false }));
 app.use(middleware.json());
 app.use('/user',route1)
 app.use('/user/notes',route2)
+app.use('/user/verification',route3)
 
 
 

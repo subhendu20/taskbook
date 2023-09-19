@@ -3,8 +3,7 @@ import './css/Login.css'
 import { useState } from 'react'
 import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom';
-import Cookies from 'universal-cookie'
-import { useSelector} from 'react-redux/es/hooks/useSelector';
+
 import { useDispatch } from 'react-redux';
 import { login } from '../actions';
 import $ from 'jquery'
@@ -72,6 +71,7 @@ function Login() {
                                         <span><label htmlFor="password">Password</label><input type="password" autocomplete="off" value={formdata.password}  placeholder="Enter password" name="password" onChange={change} /></span>
                                         <span className='button'><button type='submit'>Log in</button></span>
                                         <span className='signuplink'><p>Don't have an Account?</p><Link to="/signup">Sign up</Link></span>
+                                        <span className='signuplink'><Link to='/changepassword'>Forget Password</Link></span>
 
                               </form>
 

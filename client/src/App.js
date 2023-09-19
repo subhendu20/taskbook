@@ -17,6 +17,7 @@ import { logout } from './actions';
 import { login } from './actions'
 import { useNavigate } from 'react-router-dom';
 import logo from './kisspng-logo-5af77ccb84eeb0.3273250615261687795445.png'
+import Forgetpassword from './components/Forgetpassword';
 
 
 
@@ -158,6 +159,7 @@ function App() {
 
         <Route path='/signup' element={<Signup />} />
         <Route path='/login' element={<Login />} />
+        <Route path='/changepassword' element={<Forgetpassword/>}/>
 
 
 
