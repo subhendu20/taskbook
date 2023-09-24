@@ -179,7 +179,7 @@ function Home() {
                     <span id='error-addnote' className='none'><p>{error}</p><i class='bx bx-x' onClick={hide_error_addnote}></i></span>
 
                     <span><label htmlFor="title">Title</label><input type="text" name='title' placeholder='Title' onChange={change} className='form-input' minLength={3} required/></span>
-                    <span><label htmlFor="date">Due date</label><input type='date' name="date" placeholder='Date' value="2017-06-01" onChange={change_date} className='form-input' required /></span>
+                    <span><label htmlFor="date">Due date</label><input type='date' name="date" placeholder='Date' onChange={change_date} className='form-input' required /></span>
                     <span><label htmlFor="description">Description</label><input type='text' name='description' placeholder='Description' onChange={change} className='form-input' minLength={10} required/></span>
                     
 
