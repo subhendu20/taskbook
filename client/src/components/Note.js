@@ -38,6 +38,15 @@ function Note(props) {
                     setformdata({ ...formdata, [e.target.name]: e.target.value })
           }
 
+          const change_date =(e)=>{
+                    setformdata({
+                              ...formdata,
+                              date: e.target.value,
+                            });
+          }
+
+         
+
 
           const update = (e) => {
                     setupdatevisiblity(true)
@@ -76,7 +85,7 @@ function Note(props) {
 
                     if (checked) {
                               
-                              axios.put(`/user/notes/updatestatus/${noteid}`, { checkboxValue }, {
+                              axios.patch(`/user/notes/updatestatus/${note._id}`, { checkboxValue }, {
                                         withCredentials: true
                               }).then(() => {
                                         
@@ -95,7 +104,7 @@ function Note(props) {
                               <form method="POST" className={!updatevisiblity ? "formupdate none" : "formupdate flex"} onSubmit={setupdate}>
 
                                         <span><label htmlFor="title">title</label><input type="text" name='title' value={note.title} placeholder='Title' onChange={change} required minLength={3}/></span>
-                                        <span><label htmlFor="date">Due date</label><input type='date' name="date" value={note.date} placeholder='Date' onChange={change} required /></span>
+                                        <span><label htmlFor="date">Due date</label><input type='date' name="date" value={note.date} placeholder='Date' onChange={change_date} required /></span>
                                         <span><label htmlFor="description">Description</label><input type='text' value={note.description} name='description' placeholder='Description' onChange={change} minLength={10} /></span>
                                         <span className='button'><button type='submit'>Update</button></span>
                               </form>

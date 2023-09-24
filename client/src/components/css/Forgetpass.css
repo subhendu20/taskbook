@@ -85,7 +85,9 @@
           border-radius: 5px;
           background-color: rgb(175, 173, 173);
           display: flex;
+          
           justify-content: space-between;
+          
           padding: 10px;
 
 }

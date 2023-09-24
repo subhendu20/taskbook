@@ -135,13 +135,13 @@ router.post('/delete/:id',async (req, res) => {
 })
 
 //------------------------------------------update status----------------------------------//
-router.put('/updatestatus/:id', async (req, res) => {
+router.patch('/updatestatus/:id', async (req, res) => {
     
           try {
 
 
                 
-                    
+                    console.log(req.params.id)
                     const getcookie = await req.cookies.signintoken
                     if (!getcookie) {
                               return res.status(400).send("logged out")
@@ -151,27 +151,26 @@ router.put('/updatestatus/:id', async (req, res) => {
                     if (!check) {
                               return res.send("you are logged out")
                     }
+                   console.log(check)
                     const find = await note.findById(req.params.id)
                     
                     find.status = 'done'
-                    find.title=find.title
-                    find.description=find.description
-                    find.date = find.date
-                    
+                  
 
                    
 
                     
 
                     find.save().then(() => {
+                        console.log(find)
                               res.send(find)
                     }).catch((e) => {
-                              console.log(e)
+                              console.log(`ye hai ${e}`)
                     })
 
                     
           } catch (error) {
-                    console.log(error)
+                    console.log(`ye hai ${error}`)
           }
 })
 //----------------------------------------Status map---------------------------------//
