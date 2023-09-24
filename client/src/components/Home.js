@@ -7,13 +7,13 @@ import $ from 'jquery'
 import "jquery-ui-dist/jquery-ui";
 import './css/Home.css'
 import { Link, useNavigate } from 'react-router-dom';
-import { members } from '../Lib/Memberlist '
+
 import { default as ReactSelect } from "react-select";
 // import { useCallback } from 'react'
-import { Select, MenuItem, OutlinedInput, Stack, Chip, FormControl, InputLabel } from '@mui/material';
+
 import { useSelector } from 'react-redux/es/hooks/useSelector';
 import { useDispatch } from 'react-redux';
-import { countDecrease } from '../actions/controldel&upd';
+
 import { countIncrease } from '../actions/controldel&upd';
 import Note from './Note'
 
@@ -27,7 +27,7 @@ function Home() {
     const navigate = useNavigate()
     //------------------------------------states---------------------------------------//
     const [api, setapi] = useState({ article: [], loading: true })
-    const [names, setnames] = useState({ names: [] })
+   
     const[error,seterror]=useState('Please fill all the details about your task')
     const [addNote, setaddNote] = useState(false)
     const[status,setstatus]=useState({pending:0,done:0})
@@ -179,7 +179,7 @@ function Home() {
                     <span id='error-addnote' className='none'><p>{error}</p><i class='bx bx-x' onClick={hide_error_addnote}></i></span>
 
                     <span><label htmlFor="title">Title</label><input type="text" name='title' placeholder='Title' onChange={change} className='form-input' minLength={3} required/></span>
-                    <span><label htmlFor="date">Due date</label><input type='date' name="date" placeholder='Date' onChange={change_date} className='form-input' required /></span>
+                    <span><label htmlFor="date">Due date</label><input type='date' name="date"  onChange={change_date} className='form-input' required /></span>
                     <span><label htmlFor="description">Description</label><input type='text' name='description' placeholder='Description' onChange={change} className='form-input' minLength={10} required/></span>
                     
 
