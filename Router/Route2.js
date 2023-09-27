@@ -73,6 +73,25 @@ router.get('/fetchnote', async (req, res) => {
                               return res.send("you are logged out")
                     }
                     const data = await note.find({ userid: check })
+
+                    const formattedData = data.map((item) => ({
+                        _id: item._id,
+                        userid:item.userid,
+                        status:item.status,
+                        title: item.title,
+                        date: item.date.toISOString().split('T')[0], 
+                        description: item.description,
+                        
+                      }));
+
+
+
+                    
+
+
+
+
+
                     res.status(200).send(data)
 
           } catch (error) {

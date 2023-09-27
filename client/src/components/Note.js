@@ -21,8 +21,7 @@ function Note(props) {
 
 
           const { note } = props
-          const dateParts = note.date.split('T')[0].split('-');
-          const formattedDate = `${dateParts[0]}-${dateParts[1]}-${dateParts[2]}`
+        
 
 
           const deleteitem = async (id) => {
@@ -120,7 +119,7 @@ function Note(props) {
                                         {note.title}
 
                               </div>
-                              <div className="date" >Due date- {formattedDate}
+                              <div className="date" >Due date- {note.date}
                               </div>
                               <div className="description">
                                         {note.description}
