@@ -92,7 +92,7 @@ router.get('/fetchnote', async (req, res) => {
 
 
 
-                    res.status(200).send(data)
+                    res.status(200).send(formattedData)
 
           } catch (error) {
                     res.send(error)
