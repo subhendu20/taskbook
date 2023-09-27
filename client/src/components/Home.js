@@ -34,6 +34,8 @@ function Home() {
 
     
 
+    
+
     //--------------------------------------fetch tasks---------------------------------//
     const getapi = () => {
 
@@ -57,8 +59,8 @@ function Home() {
    
 
     const [data, setdata] = useState({ userid: "", title: "", date: "", description: ""})
-    const change = async (e) => {
-        await setdata({ ...data, [e.target.name]: e.target.value })
+    const change = (e) => {
+        setdata({ ...data, [e.target.name]: e.target.value })
 
 
     }

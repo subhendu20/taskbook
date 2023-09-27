@@ -16,9 +16,14 @@ function Note(props) {
           const [noteid, setnoteid] = useState(null)
           const [checkboxValue, setCheckboxValue] = useState(false);
 
+          
+
 
 
           const { note } = props
+          const dateParts = note.date.split('T')[0].split('-');
+          const formattedDate = `${dateParts[0]}-${dateParts[1]}-${dateParts[2]}`
+
 
           const deleteitem = async (id) => {
                     axios.post(`/user/notes/delete/${id}`, {
@@ -115,7 +120,7 @@ function Note(props) {
                                         {note.title}
 
                               </div>
-                              <div className="date" >Due date- {note.date.split('T')[0]}
+                              <div className="date" >Due date- {formattedDate}
                               </div>
                               <div className="description">
                                         {note.description}
