@@ -23,8 +23,6 @@ router.post('/signup', async (req, res) => {
 
           try {
                     const { name, email, dob, mobile, password, confirmpassword } = req.body
-                    const salt = await auth.genSaltSync(10)
-                    const hashed = await auth.hashSync(password, salt)
                     console.log(hashed)
                     if (password == !confirmpassword) {
                               return res.status(400).send("invalid password")
