@@ -115,7 +115,7 @@ function Note(props) {
                                         {note.title}
 
                               </div>
-                              <div className="date" >Due date- {note.toISOString().split('T')[0]}
+                              <div className="date" >Due date- {note.date.split('T')[0]}
                               </div>
                               <div className="description">
                                         {note.description}
