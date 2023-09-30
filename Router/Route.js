@@ -23,7 +23,7 @@ router.post('/signup', async (req, res) => {
 
           try {
                     const { name, email, dob, mobile, password, confirmpassword } = req.body
-                    console.log(hashed)
+                    
                     const salt = await auth.genSaltSync(11)
                     const encryptpass = await auth.hashSync(password, salt)
                     if (password == !confirmpassword) {
