@@ -14,7 +14,7 @@ const jwttk = process.env.TOKEN
 router.use(cookie())
 router.use(cors({
           origin: 'http://localhost:3000',
-          methods: ['POST', 'PUT', 'GET','DELETE','OPTIONS', 'HEAD'],
+          methods: ['POST', 'PUT', 'GET', 'DELETE', 'OPTIONS', 'HEAD'],
           credentials: true
 }))
 
@@ -24,12 +24,14 @@ router.post('/signup', async (req, res) => {
           try {
                     const { name, email, dob, mobile, password, confirmpassword } = req.body
                     console.log(hashed)
+                    const salt = await auth.genSaltSync(11)
+                    const encryptpass = await auth.hashSync(password, salt)
                     if (password == !confirmpassword) {
                               return res.status(400).send("invalid password")
                     }
                     else {
                               const newuser = await new user({
-                                        name, email, dob, mobile, password: hashed, confirmpassword: hashed
+                                        name, email, dob, mobile, password: encryptpass, confirmpassword: encryptpass
                               })
 
                               newuser.save().then(() => {
@@ -55,7 +57,7 @@ router.post('/signup', async (req, res) => {
 
 //------------------------------------fetch names----------------------------------------//
 
-router.get('/getallnames',async(req,res)=>{
+router.get('/getallnames', async (req, res) => {
           try {
                     const getcookie = await req.cookies.signintoken
                     var names = []
@@ -70,12 +72,12 @@ router.get('/getallnames',async(req,res)=>{
                     const data2 = await user.findById(check)
                     console.log(data2.name)
                     await data.forEach(e => {
-                              if(e.name!=data2.name){
+                              if (e.name != data2.name) {
                                         names.push(e.name)
 
                               }
-                              
-                              
+
+
                     });
                     console.log(names)
                     res.status(200).send(names)
@@ -84,7 +86,7 @@ router.get('/getallnames',async(req,res)=>{
                     res.send(error)
 
           }
-         
+
 
 })
 //----------------------------------------log in-------------------------------------------------------------//
@@ -114,7 +116,7 @@ router.post('/login', async (req, res) => {
           const cok = await res.cookie("signintoken", cookie).send("done")
 
 
-          
+
 
 
 
